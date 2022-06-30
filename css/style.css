@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  --ff-main: 'Barlow Semi Condensed',
+    sans-serif;
+
+  --fw-600: 600;
+  --fw-500: 500;
+
+  --fs-main: 1.3rem;
+
+  --clr-light: hsl(0, 0%, 81%);
+  --clr-grayish-70: hsla(210, 46%, 95%, 0.7);
+  --clr-grayish-50: hsla(210, 46%, 95%, 0.5);
+  --clr-grayish: hsl(210, 46%, 95%);
+}
+
+body {
+  font-size: var(--fs-main);
+  font-family: var(--ff-main);
+  color: var(--clr-grayish);
+  background-color: hsla(189, 100%, 95%, 0.349);
+}
+
+
+
+/* =====Typography===== */
+.card-info .card-info-name {
+  font-weight: var(--fw-500);
+
+}
+
+.card-info .card-info-verified {
+  color: var(--clr-grayish-50);
+}
+
+.card-text .card-text-bold {
+  font-size: 2rem;
+  font-weight: var(--fw-600);
+  margin: .8em 0;
+  position: relative;
+  z-index: 1;
+}
+
+.card-text .card-text-light {
+  color: var(--clr-grayish-70);
+}
+
+#grid-card-3,
+#grid-card-5 {
+  color: hsl(0, 0%, 25%);
+}
+
+#grid-card-3 .card-info .card-info-verified,
+#grid-card-5 .card-info .card-info-verified {
+  color: hsla(0, 0%, 25%, 0.5);
+}
+
+#grid-card-3 .card-text .card-text-light,
+#grid-card-5 .card-text .card-text-light {
+  color: hsla(0, 0%, 25%, 0.7);
+}
+
+
+/* =====Card Layout===== */
+
+.grid-card {
+  padding: 1.7em;
+  border-radius: 10px;
+  box-shadow: 20px 27px 50px -28px rgba(85, 85, 85, 0.59);
+  -webkit-box-shadow: 20px 27px 50px -28px rgba(85, 85, 85, 0.59);
+  -moz-box-shadow: 20px 27px 50px -28px rgba(85, 85, 85, 0.59);
+}
+
+.grid-card-top {
+  display: flex;
+}
+
+img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+img.svg {
+  height: 110px;
+  width: 80px;
+  position: absolute;
+  top: 0;
+  right: 5em;
+  z-index: 0;
+}
+
+@media (max-width:850px) {
+  img.svg {
+    right: 2em;
+  }
+}
+
+.grid-card-top .card-img {
+  order: 1;
+  margin-right: 1em;
+}
+
+.grid-card-top .card-info {
+  order: 2;
+}
+
+/* =====Layout===== */
+
+.grid-container {
+  width: min(90%, 1150px);
+  margin: 5em auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 2em;
+}
+
+#grid-card-1 {
+  background-color: hsl(263, 55%, 52%);
+  grid-column: 1/span 2;
+  grid-row: 1/2;
+  position: relative;
+}
+
+#grid-card-2 {
+  background-color: hsl(217, 19%, 35%);
+  grid-column: 3/4;
+  grid-row: 1/2;
+}
+
+#grid-card-4 {
+  background-color: hsl(219, 29%, 14%);
+  grid-column: 2/span 2;
+  grid-row: 2/3;
+}
+
+#grid-card-3,
+#grid-card-5 {
+  background-color: hsl(0, 0%, 100%);
+}
+
+#grid-card-3 {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+
+#grid-card-5 {
+  grid-column: 4/5;
+  grid-row: 1/span2;
+}
