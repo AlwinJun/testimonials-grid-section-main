@@ -103,6 +103,8 @@ img.svg {
 
 @media (max-width:850px) {
   img.svg {
+    position: absolute;
+    top: 0;
     right: 2em;
   }
 }
@@ -159,4 +161,17 @@ img.svg {
 #grid-card-5 {
   grid-column: 4/5;
   grid-row: 1/span2;
+}
+
+@media (max-width: 720px) {
+  .grid-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  img.svg {
+    position: absolute;
+    top: 0;
+    right: 2.5em;
+  }
 }
