@@ -97,17 +97,11 @@ img.svg {
   width: 80px;
   position: absolute;
   top: 0;
-  right: 5em;
+  right: 2em;
   z-index: 0;
 }
 
-@media (max-width:850px) {
-  img.svg {
-    position: absolute;
-    top: 0;
-    right: 2em;
-  }
-}
+
 
 .grid-card-top .card-img {
   order: 1;
@@ -123,10 +117,34 @@ img.svg {
 .grid-container {
   width: min(90%, 1150px);
   margin: 5em auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  display: flex;
+  flex-direction: column;
   gap: 2em;
+}
+
+@media (min-width: 720px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+
+  }
+
+  img.svg {
+    position: absolute;
+    top: 0;
+    right: 2em;
+
+
+  }
+}
+
+@media (min-width:850px) {
+  img.svg {
+    position: absolute;
+    top: 0;
+    right: 5em;
+  }
 }
 
 #grid-card-1 {
@@ -161,17 +179,4 @@ img.svg {
 #grid-card-5 {
   grid-column: 4/5;
   grid-row: 1/span2;
-}
-
-@media (max-width: 720px) {
-  .grid-container {
-    display: flex;
-    flex-direction: column;
-  }
-
-  img.svg {
-    position: absolute;
-    top: 0;
-    right: 2.5em;
-  }
 }
